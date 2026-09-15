@@ -13,7 +13,7 @@
       --heading: #f0f6fc;
       --accent: #58a6ff;
       --muted: #8b949e;
-      --nav-bg: rgba(11, 15, 20, 0.8);
+      --nav-bg: rgba(11, 15, 20, 0.85);
     }
 
     * {
@@ -34,7 +34,7 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    /* Minimalist Fixed Nav Bar */
+    /* Top Nav */
     nav {
       position: fixed;
       top: 0;
@@ -80,7 +80,7 @@
       color: var(--heading);
     }
 
-    /* Hero Landing */
+    /* Hero Section */
     .hero {
       min-height: 100vh;
       display: flex;
@@ -123,7 +123,7 @@
       margin-top: 0.25rem;
     }
 
-    /* Section Containers */
+    /* Content Layout */
     .container {
       max-width: 1000px;
       margin: 0 auto;
@@ -149,6 +149,38 @@
       background: var(--border);
     }
 
+    /* Modular About Layout */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 2.5rem;
+      align-items: start;
+    }
+
+    .about-photo {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      object-fit: cover;
+      display: block;
+    }
+
+    .philosophy-title {
+      color: var(--heading);
+      font-size: 1.25rem;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .philosophy-text {
+      color: var(--text);
+      font-style: italic;
+      line-height: 1.8;
+      margin-bottom: 1.25rem;
+      font-size: 0.95rem;
+    }
+
+    /* Grid & Clickable Cards */
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -160,25 +192,44 @@
       border: 1px solid var(--border);
       border-radius: 8px;
       padding: 1.75rem;
-      transition: transform 0.2s ease, border-color 0.2s ease;
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
     }
 
     .card:hover {
       transform: translateY(-4px);
       border-color: var(--accent);
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
     }
 
     .card h3 {
       color: var(--heading);
       font-size: 1.2rem;
       margin-bottom: 0.6rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .card h3 .arrow {
+      font-size: 0.9rem;
+      color: var(--accent);
+      transition: transform 0.2s ease;
+    }
+
+    .card:hover h3 .arrow {
+      transform: translate(3px, -3px);
     }
 
     .card p {
       font-size: 0.92rem;
       color: var(--muted);
       line-height: 1.6;
-      margin-bottom: 1rem;
+      margin-bottom: 1.25rem;
     }
 
     .tags {
@@ -222,7 +273,7 @@
       color: var(--accent);
     }
 
-    @media (max-width: 650px) {
+    @media (max-width: 768px) {
       nav {
         padding: 0 1.25rem;
       }
@@ -232,14 +283,17 @@
       .nav-links a {
         font-size: 0.75rem;
       }
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
 <body>
 
-  <!-- Navigation Menu -->
+  <!-- Top Navigation -->
   <nav>
-    <a href="#home" class="nav-brand">Aben Binu</a>
+    <a href="index.html#home" class="nav-brand">Aben Binu</a>
     <ul class="nav-links">
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
@@ -257,79 +311,85 @@
     <div class="degree">B.S. Aerospace Engineering | Schreyer Honors College</div>
   </header>
 
-  <!-- About Section -->
-  <section id="about" class="container">
-    <h2 class="section-title">About</h2>
-    <div class="card">
-      <h3>Engineering & Background</h3>
-      <p>Aerospace Engineering student at Pennsylvania State University within the Schreyer Honors College. Focusing on structural health monitoring, aerodynamics, and advanced propulsion systems with hands-on lab instrumentation, machining, and systems engineering.</p>
-      <div class="tags">
-        <span class="tag">Penn State '28</span>
-        <span class="tag">Schreyer Honors</span>
-        <span class="tag">Aerospace</span>
-      </div>
-    </div>
-  </section>
+  <!-- Modular About Section -->
+  <section id="about" class="container"></section>
 
-  <!-- Projects Section -->
+  <!-- Projects Section (Clickable Cards) -->
   <section id="projects" class="container">
     <h2 class="section-title">Focus & Projects</h2>
     <div class="grid">
-      <div class="card">
-        <h3>GiMaS Lab Research</h3>
-        <p>Instrumentation, data acquisition (DAQ), and sensor integration for structural health monitoring.</p>
+
+      <!-- PROJECT 1: Replace 'gimas-lab.html' with your target filename -->
+      <a href="gimas-lab.html" class="card">
+        <div>
+          <h3>GiMaS Lab Research <span class="arrow">↗</span></h3>
+          <p>Instrumentation, data acquisition (DAQ), and sensor integration for structural health monitoring.</p>
+        </div>
         <div class="tags">
           <span class="tag">DAQ</span>
           <span class="tag">Sensors</span>
           <span class="tag">LabVIEW</span>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
-        <h3>Aerodynamics & CAD</h3>
-        <p>High-camber airfoil evaluation, SolidWorks parametric models, and wind-tunnel fixture machining.</p>
+      <!-- PROJECT 2: Replace 'aerodynamics-cad.html' with your target filename -->
+      <a href="aerodynamics-cad.html" class="card">
+        <div>
+          <h3>Aerodynamics & CAD <span class="arrow">↗</span></h3>
+          <p>High-camber airfoil evaluation, SolidWorks parametric models, and wind-tunnel fixture machining.</p>
+        </div>
         <div class="tags">
           <span class="tag">SolidWorks</span>
           <span class="tag">Machining</span>
           <span class="tag">CFD</span>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
-        <h3>Flight Systems</h3>
-        <p>Telemetry, PCB design for test hardware, and embedded controls integration.</p>
+      <!-- PROJECT 3: Replace 'flight-systems.html' with your target filename -->
+      <a href="flight-systems.html" class="card">
+        <div>
+          <h3>Flight Systems <span class="arrow">↗</span></h3>
+          <p>Telemetry, PCB design for test hardware, and embedded controls integration.</p>
+        </div>
         <div class="tags">
           <span class="tag">KiCad</span>
           <span class="tag">Hardware</span>
           <span class="tag">Testing</span>
         </div>
-      </div>
+      </a>
+
     </div>
   </section>
 
-  <!-- Vast Thinking Section -->
+  <!-- Vast Thinking Section (Clickable Cards) -->
   <section id="vast-thinking" class="container">
     <h2 class="section-title">Vast Thinking</h2>
     <div class="grid">
-      <div class="card">
-        <h3>Relativistic Propulsion & Interstellar Transit</h3>
-        <p>First-principles analyses exploring high-energy propulsion bounds, photon sail acceleration physics, and time dilation dynamics over interstellar baselines.</p>
+
+      <!-- ESSAY / THOUGHT 1: Replace 'propulsion-physics.html' with your target filename -->
+      <a href="propulsion-physics.html" class="card">
+        <div>
+          <h3>Relativistic Propulsion & Interstellar Transit <span class="arrow">↗</span></h3>
+          <p>First-principles analyses exploring high-energy propulsion bounds, photon sail acceleration physics, and time dilation dynamics.</p>
+        </div>
         <div class="tags">
           <span class="tag">Relativistic Mechanics</span>
-          <span class="tag">Advanced Propulsion</span>
-          <span class="tag">Theoretical Physics</span>
+          <span class="tag">Propulsion</span>
         </div>
-      </div>
+      </a>
 
-      <div class="card">
-        <h3>Deep-Space Information & Latency</h3>
-        <p>Information-theoretic limits on high-frequency optical communication architectures across multi-AU operational regimes.</p>
+      <!-- ESSAY / THOUGHT 2: Replace 'deep-space-latency.html' with your target filename -->
+      <a href="deep-space-latency.html" class="card">
+        <div>
+          <h3>Deep-Space Information & Latency <span class="arrow">↗</span></h3>
+          <p>Information-theoretic limits on high-frequency optical communication architectures across multi-AU operational regimes.</p>
+        </div>
         <div class="tags">
           <span class="tag">Signal Architecture</span>
           <span class="tag">Deep Space RF</span>
-          <span class="tag">Optical Links</span>
         </div>
-      </div>
+      </a>
+
     </div>
   </section>
 
@@ -342,6 +402,19 @@
     </div>
     <p>&copy; 2026 Aben Binu. All rights reserved.</p>
   </footer>
+
+  <!-- Asynchronous Module Loader for about.html -->
+  <script>
+    fetch('about.html')
+      .then(res => {
+        if (!res.ok) throw new Error('about.html not found');
+        return res.text();
+      })
+      .then(html => {
+        document.getElementById('about').innerHTML = html;
+      })
+      .catch(err => console.error(err));
+  </script>
 
 </body>
 </html>
