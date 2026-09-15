@@ -1,1 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spacetime Mechanics & Relativistic Inquiry | Aben Binu</title>
+  <style>
+    :root {
+      --bg: #0d1117;
+      --card-bg: #161b22;
+      --border: #30363d;
+      --text: #c9d1d9;
+      --heading: #f0f6fc;
+      --accent: #58a6ff;
+      --muted: #8b949e;
+    }
 
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.6;
+      padding: 2.5rem 1.25rem;
+    }
+
+    .container { max-width: 860px; margin: 0 auto; }
+    
+    .back-link {
+      display: inline-block;
+      color: var(--accent);
+      text-decoration: none;
+      font-size: 0.9rem;
+      margin-bottom: 2rem;
+      letter-spacing: 0.05em;
+    }
+    .back-link:hover { text-decoration: underline; }
+
+    header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
+    h1 { color: var(--heading); font-size: clamp(1.6rem, 3.5vw, 2.2rem); line-height: 1.25; margin-bottom: 0.75rem; }
+    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
+    
+    .badge {
+      display: inline-block;
+      font-size: 0.75rem;
+      background: rgba(88, 166, 255, 0.1);
+      color: var(--accent);
+      padding: 0.2rem 0.6rem;
+      border-radius: 4px;
+      border: 1px solid rgba(88, 166, 255, 0.2);
+    }
+
+    .action-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 1.5rem 0 2rem 0;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      background: var(--card-bg);
+      color: var(--heading);
+      border: 1px solid var(--border);
+      padding: 0.6rem 1.1rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      transition: border-color 0.2s ease;
+    }
+    .btn:hover { border-color: var(--accent); color: var(--accent); }
+    .btn-primary { background: rgba(88, 166, 255, 0.15); border-color: var(--accent); color: var(--accent); }
+
+    .section { margin-bottom: 2.5rem; }
+    h2 { 
+      color: var(--heading); 
+      font-size: 1.15rem; 
+      text-transform: uppercase; 
+      letter-spacing: 0.08em; 
+      margin-bottom: 1rem; 
+      border-bottom: 1px solid var(--border); 
+      padding-bottom: 0.4rem; 
+    }
+    p { margin-bottom: 1rem; color: var(--text); font-size: 0.95rem; }
+
+    ul { list-style: disc; margin-left: 1.5rem; margin-bottom: 1rem; }
+    li { margin-bottom: 0.5rem; font-size: 0.95rem; }
+    li strong { color: var(--heading); }
+
+    .media-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+    }
+    .media-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .media-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+      border-bottom: 1px solid var(--border);
+    }
+    .media-card .caption {
+      padding: 0.85rem 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .media-card .caption strong { color: var(--heading); display: block; margin-bottom: 0.25rem; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <a href="../../index.html" class="back-link">&larr; Back to Home</a>
+    
+    <header>
+      <h1>Theoretical Physics & Spacetime Mechanics</h1>
+      <div class="meta">
+        Independent Conceptual Inquiry &bull; Okemos High School Academic Recognition
+      </div>
+      <span class="badge">Foundational Research Archive</span>
+    </header>
+
+    <div class="action-bar">
+      <a href="paper.pdf" target="_blank" class="btn btn-primary">
+        &darr; View Original Paper (PDF)
+      </a>
+      <a href="certificate.jpg" target="_blank" class="btn">
+        View Award Certificate
+      </a>
+    </div>
+
+    <div class="section">
+      <h2>Context & Motivation</h2>
+      <p>
+        Authored as an early academic milestone exploring whether theoretical spacetime manipulations can exist consistently within established physics. Rather than treating time manipulation as speculative fiction, the study evaluated relativistic frameworks, non-inertial frames of reference, and tensor geometry.
+      </p>
+    </div>
+
+    <div class="section">
+      <h2>Analytical Scope</h2>
+      <ul>
+        <li><strong>Relativistic Kinematics:</strong> Examined velocity and gravitational time dilation governed by Special and General Relativity, evaluated against real-world orbital satellite drift.</li>
+        <li><strong>Spacetime Curvature & CTCs:</strong> Analyzed mathematical formulations of Closed Timelike Curves (CTCs), cosmic strings, and wormhole metrics.</li>
+        <li><strong>Causality Constraints:</strong> Evaluated classical temporal paradoxes through modern physical consistency conjectures and thermodynamic arrows of time.</li>
+      </ul>
+    </div>
+
+    <div class="section">
+      <h2>Documentation & Verification</h2>
+      <div class="media-grid">
+        <div class="media-card">
+          <img src="certificate.jpg" alt="Okemos High School Certificate of Appreciation" />
+          <div class="caption">
+            <strong>Academic Recognition</strong>
+            Awarded highest academic appreciation from Okemos High School for depth of research and analytical reasoning.
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</body>
+</html>
