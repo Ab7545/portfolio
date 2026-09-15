@@ -6,19 +6,24 @@
   <title>Aben Binu | Aerospace Engineering</title>
   <style>
     :root {
-      --bg: #0d1117;
-      --card-bg: #161b22;
-      --border: #30363d;
-      --text: #c9d1d9;
+      --bg: #0b0f14;
+      --card-bg: #141a22;
+      --border: #262f3a;
+      --text: #c5d1de;
       --heading: #f0f6fc;
       --accent: #58a6ff;
       --muted: #8b949e;
+      --nav-bg: rgba(11, 15, 20, 0.8);
     }
 
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
     }
 
     body {
@@ -29,8 +34,55 @@
       -webkit-font-smoothing: antialiased;
     }
 
+    /* Minimalist Fixed Nav Bar */
+    nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 65px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0 2.5rem;
+      background: var(--nav-bg);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+      z-index: 1000;
+    }
+
+    .nav-brand {
+      color: var(--heading);
+      text-decoration: none;
+      font-size: 0.95rem;
+      letter-spacing: 0.2em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    .nav-links a {
+      color: var(--muted);
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--heading);
+    }
+
+    /* Hero Landing */
     .hero {
-      min-height: 90vh;
+      min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -38,10 +90,9 @@
       text-align: center;
       padding: 2rem;
       border-bottom: 1px solid var(--border);
-
-      /* Background image properties */
       background: linear-gradient(rgba(13, 17, 23, 0.6), rgba(13, 17, 23, 0.8)), url('hero.jpg') center/cover no-repeat;
     }
+
     .divider {
       width: 120px;
       height: 2px;
@@ -72,21 +123,23 @@
       margin-top: 0.25rem;
     }
 
+    /* Section Containers */
     .container {
       max-width: 1000px;
       margin: 0 auto;
-      padding: 4rem 1.5rem;
+      padding: 5rem 1.5rem;
+      border-bottom: 1px solid var(--border);
     }
 
     .section-title {
-      font-size: 1.5rem;
-      letter-spacing: 0.1em;
+      font-size: 1.4rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--heading);
       margin-bottom: 2rem;
       display: flex;
       align-items: center;
-      gap: 1rem;
+      gap: 1.2rem;
     }
 
     .section-title::after {
@@ -106,7 +159,7 @@
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 1.5rem;
+      padding: 1.75rem;
       transition: transform 0.2s ease, border-color 0.2s ease;
     }
 
@@ -118,12 +171,13 @@
     .card h3 {
       color: var(--heading);
       font-size: 1.2rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.6rem;
     }
 
     .card p {
-      font-size: 0.9rem;
+      font-size: 0.92rem;
       color: var(--muted);
+      line-height: 1.6;
       margin-bottom: 1rem;
     }
 
@@ -137,15 +191,15 @@
       font-size: 0.75rem;
       background: rgba(88, 166, 255, 0.1);
       color: var(--accent);
-      padding: 0.2rem 0.6rem;
+      padding: 0.25rem 0.6rem;
       border-radius: 4px;
       border: 1px solid rgba(88, 166, 255, 0.2);
     }
 
+    /* Footer */
     footer {
       text-align: center;
-      padding: 3rem 1rem;
-      border-top: 1px solid var(--border);
+      padding: 4rem 1rem;
       color: var(--muted);
       font-size: 0.85rem;
     }
@@ -153,8 +207,8 @@
     .links {
       display: flex;
       justify-content: center;
-      gap: 1.5rem;
-      margin-bottom: 1rem;
+      gap: 2rem;
+      margin-bottom: 1.25rem;
     }
 
     .links a {
@@ -167,11 +221,35 @@
     .links a:hover {
       color: var(--accent);
     }
+
+    @media (max-width: 650px) {
+      nav {
+        padding: 0 1.25rem;
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+      .nav-links a {
+        font-size: 0.75rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <header class="hero">
+  <!-- Navigation Menu -->
+  <nav>
+    <a href="#home" class="nav-brand">Aben Binu</a>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#vast-thinking">Vast Thinking</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Landing -->
+  <header id="home" class="hero">
     <div class="divider"></div>
     <h1>Aben Binu</h1>
     <div class="divider"></div>
@@ -179,7 +257,22 @@
     <div class="degree">B.S. Aerospace Engineering | Schreyer Honors College</div>
   </header>
 
-  <main class="container">
+  <!-- About Section -->
+  <section id="about" class="container">
+    <h2 class="section-title">About</h2>
+    <div class="card">
+      <h3>Engineering & Background</h3>
+      <p>Aerospace Engineering student at Pennsylvania State University within the Schreyer Honors College. Focusing on structural health monitoring, aerodynamics, and advanced propulsion systems with hands-on lab instrumentation, machining, and systems engineering.</p>
+      <div class="tags">
+        <span class="tag">Penn State '28</span>
+        <span class="tag">Schreyer Honors</span>
+        <span class="tag">Aerospace</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="container">
     <h2 class="section-title">Focus & Projects</h2>
     <div class="grid">
       <div class="card">
@@ -212,13 +305,40 @@
         </div>
       </div>
     </div>
-  </main>
+  </section>
 
-  <footer>
+  <!-- Vast Thinking Section -->
+  <section id="vast-thinking" class="container">
+    <h2 class="section-title">Vast Thinking</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>Relativistic Propulsion & Interstellar Transit</h3>
+        <p>First-principles analyses exploring high-energy propulsion bounds, photon sail acceleration physics, and time dilation dynamics over interstellar baselines.</p>
+        <div class="tags">
+          <span class="tag">Relativistic Mechanics</span>
+          <span class="tag">Advanced Propulsion</span>
+          <span class="tag">Theoretical Physics</span>
+        </div>
+      </div>
+
+      <div class="card">
+        <h3>Deep-Space Information & Latency</h3>
+        <p>Information-theoretic limits on high-frequency optical communication architectures across multi-AU operational regimes.</p>
+        <div class="tags">
+          <span class="tag">Signal Architecture</span>
+          <span class="tag">Deep Space RF</span>
+          <span class="tag">Optical Links</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer id="contact">
     <div class="links">
       <a href="https://www.linkedin.com/in/aben-binu-a86a42310/" target="_blank">LinkedIn</a>
-      <a href="https://github.com" target="_blank">GitHub</a>
-      <a href="abenbinumadukkathil@gmail.com">Email</a>
+      <a href="https://github.com/Ab7545" target="_blank">GitHub</a>
+      <a href="mailto:abenbinumadukkathil@gmail.com">Email</a>
     </div>
     <p>&copy; 2026 Aben Binu. All rights reserved.</p>
   </footer>
