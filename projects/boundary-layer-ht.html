@@ -70,13 +70,14 @@
       font-size: 0.85rem;
       font-weight: 500;
       transition: all 0.2s ease;
+      cursor: pointer;
     }
     .btn:hover {
       border-color: var(--accent);
       color: var(--accent);
       transform: translateY(-2px);
     }
-    .btn-primary {
+    .btn.active {
       background: rgba(88, 166, 255, 0.15);
       border-color: var(--accent);
       color: var(--accent);
@@ -122,23 +123,37 @@
       gap: 1.5rem;
       margin-top: 1.5rem;
     }
+    .media-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .media-card a {
+      display: block;
+      width: 100%;
+      background: #0d1117;
+      border-bottom: 1px solid var(--border);
+      text-decoration: none;
+    }
     .media-card img {
       width: 100%;
-      height: auto;
+      height: 220px;
+      object-fit: contain;
       display: block;
-      border-bottom: 1px solid var(--border);
+      padding: 0.5rem;
+      transition: transform 0.2s ease;
     }
-   .media-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-bottom: 1px solid var(--border);
+    .media-card a:hover img {
+      transform: scale(1.02);
     }
-    .media-card img {
-      width: 100%;
-      height: auto;
-      display: block;
-      border-bottom: 1px solid var(--border);
+    .media-card .caption {
+      padding: 0.85rem 1rem;
+      font-size: 0.8rem;
+      color: var(--muted);
+      line-height: 1.4;
     }
     .media-card .caption strong { color: var(--heading); display: block; margin-bottom: 0.25rem; font-size: 0.85rem; }
 
@@ -172,9 +187,9 @@
       </div>
     </header>
 
-    <!-- Documents & Download Links (all local to projects/ folder) -->
+    <!-- Documents & Download Links -->
     <div class="action-bar">
-      <a href="IHTC18_Louver_HT_Enhancement.pdf" target="_blank" class="btn btn-primary">
+      <a href="IHTC18_Louver_HT_Enhancement.pdf" target="_blank" class="btn">
         &darr; Download Full Paper (IHTC-18 PDF)
       </a>
       <a href="Aben_CERS_Poster.pdf" target="_blank" class="btn">
@@ -213,26 +228,32 @@
       </p>
     </div>
 
-    <!-- Visual Media Grid (all local to projects/ folder) -->
+    <!-- Visual Media Grid -->
     <div class="section">
       <h2>Hardware & Data Diagnostics</h2>
       <div class="media-grid">
         <div class="media-card">
-          <img src="test-rig-cad.jpg" alt="CAD Assembly of GIMAS Wind Tunnel Test Section" />
+          <a href="test-rig-cad.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="test-rig-cad.jpg" alt="CAD Assembly of GIMAS Wind Tunnel Test Section" />
+          </a>
           <div class="caption">
-            <strong>Experimental Setup </strong>
+            <strong>Experimental Setup</strong>
             Modular test section CAD assembly featuring settling chamber, flow straightener honeycomb, and optical access zones.
           </div>
         </div>
         <div class="media-card">
-          <img src="heater-wiring.jpg" alt="Electric heating element and thermocouple mapping" />
+          <a href="heater-wiring.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="heater-wiring.jpg" alt="Electric heating element and thermocouple mapping" />
+          </a>
           <div class="caption">
             <strong>Instrumentation & Thermal Array</strong>
             Heated plate underside showing wiring for 300 W uniform electric heating elements and multi-channel Type-K thermocouple grid.
           </div>
         </div>
         <div class="media-card">
-          <img src="thpf-curve.jpg" alt="Thermal-Hydraulic Performance Factor vs Reynolds Number" />
+          <a href="thpf-curve.jpg" target="_blank" rel="noopener noreferrer">
+            <img src="thpf-curve.jpg" alt="Thermal-Hydraulic Performance Factor vs Reynolds Number" />
+          </a>
           <div class="caption">
             <strong>Empirical Validation Curves</strong>
             Extracted MATLAB reduction curves comparing Configuration 1 vs Configuration 2 THPF metrics against smooth-duct baselines.
@@ -268,5 +289,15 @@
       </div>
     </div>
   </div>
+
+  <script>
+    const actionButtons = document.querySelectorAll('.action-bar .btn');
+    actionButtons.forEach(btn => {
+      btn.addEventListener('click', () => {
+        actionButtons.forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+      });
+    });
+  </script>
 </body>
 </html>
