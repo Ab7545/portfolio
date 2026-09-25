@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Passive Boundary-Layer Flow Control & Heat Transfer | Aben Binu</title>
   <style>
+    /* ========================================================
+       GLOBAL PALETTE & RESET
+       ======================================================== */
     :root {
       --bg: #0d1117;
       --card-bg: #161b22;
@@ -36,6 +39,9 @@
     }
     .back-link:hover { text-decoration: underline; }
 
+    /* ========================================================
+       HEADER & TAGS
+       ======================================================== */
     header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
     h1 { color: var(--heading); font-size: clamp(1.6rem, 3.5vw, 2.3rem); line-height: 1.25; margin-bottom: 0.75rem; }
     .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
@@ -50,7 +56,9 @@
       border: 1px solid rgba(88, 166, 255, 0.2);
     }
 
-    /* Action Buttons */
+    /* ========================================================
+       PDF & DOCUMENT ACTION BUTTONS
+       ======================================================== */
     .action-bar {
       display: flex;
       flex-wrap: wrap;
@@ -83,6 +91,9 @@
       color: var(--accent);
     }
 
+    /* ========================================================
+       GENERAL SECTION STYLING
+       ======================================================== */
     .section { margin-bottom: 3rem; }
     h2 { 
       color: var(--heading); 
@@ -95,7 +106,9 @@
     }
     p { margin-bottom: 1rem; color: var(--text); font-size: 0.95rem; }
 
-    /* Metrics Grid */
+    /* ========================================================
+       METRICS CARDS GRID
+       ======================================================== */
     .metrics-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -116,88 +129,53 @@
     li { margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text); }
     li strong { color: var(--heading); }
 
-    /* Featured Rig Layout */
-    .featured-media-card {
+    /* ========================================================
+       SEQUENTIAL HARDWARE & GRAPH SHOWCASE
+       ======================================================== */
+    .showcase-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 6px;
       overflow: hidden;
-      margin-top: 1.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
     }
-    .featured-media-card a {
+    .showcase-card a {
       display: block;
       width: 100%;
       background: #0d1117;
       text-decoration: none;
       border-bottom: 1px solid var(--border);
     }
-    .featured-media-card img {
+    /* Natural aspect ratio rendering without cropping axes or labels */
+    .showcase-card img {
       width: 100%;
       height: auto;
-      max-height: 480px;
+      max-height: 520px;
       object-fit: contain;
       display: block;
       padding: 1rem;
       margin: 0 auto;
       transition: transform 0.2s ease;
     }
-    .featured-media-card a:hover img {
+    .showcase-card a:hover img {
       transform: scale(1.01);
     }
-    .featured-media-card .caption {
-      padding: 0.85rem 1.25rem;
-      font-size: 0.95rem;
-      color: var(--heading);
-      font-weight: 600;
-      text-align: center;
-    }
-
-    /* Sub-grid for the 2 Diagnostic Cards */
-    .media-subgrid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
-    .media-card {
-      background: var(--card-bg);
-      border: 1px solid var(--border);
-      border-radius: 6px;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-    }
-    .media-card a {
-      display: block;
-      width: 100%;
-      background: #0d1117;
-      border-bottom: 1px solid var(--border);
-      text-decoration: none;
-    }
-    .media-card img {
-      width: 100%;
-      height: 240px;
-      object-fit: contain;
-      display: block;
-      padding: 0.75rem;
-      transition: transform 0.2s ease;
-    }
-    .media-card a:hover img {
-      transform: scale(1.02);
-    }
-    .media-card .caption {
-      padding: 0.85rem 1rem;
-      font-size: 0.8rem;
+    .showcase-card .caption {
+      padding: 1rem 1.25rem;
+      font-size: 0.85rem;
       color: var(--muted);
-      line-height: 1.4;
+      line-height: 1.5;
     }
-    .media-card .caption strong { 
-      color: var(--heading); 
-      display: block; 
-      margin-bottom: 0.25rem; 
-      font-size: 0.85rem; 
+    .showcase-card .caption strong {
+      color: var(--heading);
+      display: block;
+      margin-bottom: 0.35rem;
+      font-size: 0.95rem;
     }
 
+    /* ========================================================
+       ACADEMIC CITATION BOX
+       ======================================================== */
     .citation-box {
       background: var(--card-bg);
       border-left: 3px solid var(--accent);
@@ -214,6 +192,9 @@
   <div class="container">
     <a href="../index.html" class="back-link">&larr; Back to Home</a>
     
+    <!-- ========================================================
+         PAGE HEADER & METADATA
+         ======================================================== -->
     <header>
       <h1>Passive Boundary-Layer Flow Control & Heat Transfer Enhancement</h1>
       <div class="meta">
@@ -228,17 +209,23 @@
       </div>
     </header>
 
-    <!-- Documents & Download Links -->
+    <!-- ========================================================
+         PDF DOWNLOAD BUTTONS (Click-highlight enabled)
+         ======================================================== -->
     <div class="action-bar">
+      <!-- PDF 1: Conference Paper -->
       <a href="IHTC18_Louver_HT_Enhancement.pdf" target="_blank" class="btn">
         &darr; Download Full Paper (IHTC-18 PDF)
       </a>
+      <!-- PDF 2: Symposium Poster -->
       <a href="Aben_CERS_Poster.pdf" target="_blank" class="btn">
         &darr; View Symposium Poster (PDF)
       </a>
     </div>
 
-    <!-- Quantitative Metrics -->
+    <!-- ========================================================
+         SECTION: QUANTITATIVE SUMMARY METRICS
+         ======================================================== -->
     <div class="metrics-grid">
       <div class="metric-card">
         <div class="metric-value">4.0x</div>
@@ -258,7 +245,9 @@
       </div>
     </div>
 
-    <!-- Experimental Breakdown -->
+    <!-- ========================================================
+         SECTION: EXPERIMENTAL INVESTIGATION OVERVIEW
+         ======================================================== -->
     <div class="section">
       <h2>Experimental Investigation</h2>
       <p>
@@ -269,45 +258,49 @@
       </p>
     </div>
 
-    <!-- Visual Media Section -->
+    <!-- ========================================================
+         SECTION: HARDWARE & DATA DIAGNOSTICS (Images & Plots)
+         ======================================================== -->
     <div class="section">
       <h2>Hardware & Data Diagnostics</h2>
       
-      <!-- Primary Featured Rig Diagram -->
-      <div class="featured-media-card">
+      <!-- IMAGE 1: CAD RIG ASSEMBLY (Showcase Main) -->
+      <div class="showcase-card">
         <a href="test-rig-cad.jpg" target="_blank" rel="noopener noreferrer">
           <img src="test-rig-cad.jpg" alt="CAD Assembly of GIMAS Wind Tunnel Test Section" />
         </a>
         <div class="caption">
-          Experimental Setup
+          <strong>Experimental Setup</strong>
+          Modular test section CAD assembly featuring settling chamber, flow straightener honeycomb, and optical access zones.
         </div>
       </div>
 
-      <!-- Secondary Diagnostics (2 Columns Below) -->
-      <div class="media-subgrid">
-        <div class="media-card">
-          <a href="heater-wiring.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="heater-wiring.jpg" alt="Electric heating element and thermocouple mapping" />
-          </a>
-          <div class="caption">
-            <strong>Instrumentation & Thermal Array</strong>
-            Heated plate underside showing wiring for 300 W uniform electric heating elements and multi-channel Type-K thermocouple grid.
-          </div>
+      <!-- IMAGE 2: HEATER & THERMOCOUPLE WIRING (Physical Hardware) -->
+      <div class="showcase-card">
+        <a href="heater-wiring.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="heater-wiring.jpg" alt="Electric heating element and thermocouple mapping" />
+        </a>
+        <div class="caption">
+          <strong>Instrumentation & Thermal Array</strong>
+          Heated plate underside showing wiring for 300 W uniform electric heating elements and multi-channel Type-K thermocouple grid.
         </div>
+      </div>
 
-        <div class="media-card">
-          <a href="thpf-curve.jpg" target="_blank" rel="noopener noreferrer">
-            <img src="thpf-curve.jpg" alt="Thermal-Hydraulic Performance Factor vs Reynolds Number" />
-          </a>
-          <div class="caption">
-            <strong>Empirical Validation Curves</strong>
-            Extracted MATLAB reduction curves comparing Configuration 1 vs Configuration 2 THPF metrics against smooth-duct baselines.
-          </div>
+      <!-- IMAGE 3: THPF VALIDATION PLOT (Fully Enlarged Graph) -->
+      <div class="showcase-card">
+        <a href="thpf-curve.jpg" target="_blank" rel="noopener noreferrer">
+          <img src="thpf-curve.jpg" alt="Thermal-Hydraulic Performance Factor vs Reynolds Number" />
+        </a>
+        <div class="caption">
+          <strong>Empirical Validation Curves</strong>
+          Extracted MATLAB reduction curves comparing Configuration 1 vs Configuration 2 THPF metrics against smooth-duct baselines across the Re 3,000–30,000 operating envelope.
         </div>
       </div>
     </div>
 
-    <!-- Instrumentation & DAQ Scope -->
+    <!-- ========================================================
+         SECTION: INSTRUMENTATION & SENSOR DAQ SPECIFICATIONS
+         ======================================================== -->
     <div class="section">
       <h2>Instrumentation & Data Processing</h2>
       <ul>
@@ -318,7 +311,9 @@
       </ul>
     </div>
 
-    <!-- Publications & Academic Credit -->
+    <!-- ========================================================
+         SECTION: PUBLICATIONS & SYMPOSIUM CITATIONS
+         ======================================================== -->
     <div class="section">
       <h2>Publications & Dissemination</h2>
       <div class="citation-box">
@@ -335,6 +330,9 @@
     </div>
   </div>
 
+  <!-- ========================================================
+       JAVASCRIPT: ACTIVE BUTTON HIGHLIGHT CONTROLLER
+       ======================================================== -->
   <script>
     const actionButtons = document.querySelectorAll('.action-bar .btn');
     actionButtons.forEach(btn => {
