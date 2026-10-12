@@ -306,7 +306,7 @@
           View Source Repository
         </a>
 
-        <a href="Airline_Management_Report.pdf" target="_blank" rel="noopener noreferrer" class="btn">
+        <a href="Airline management project file.pdf" target="_blank" rel="noopener noreferrer" class="btn">
           <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor">
             <path d="M14 14V4.5L9.5 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2zM9.5 3A1.5 1.5 0 0 0 11 4.5h2V14a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h5.5v2z"/>
             <path d="M4.603 14.087a.81.81 0 0 1-.438-.42c-.195-.388-.13-.776.08-1.127.228-.38.613-.708 1.143-.974.43-.215.983-.394 1.637-.534a21.72 21.72 0 0 1 1.58-.23c.31-.033.633-.057.962-.07.03-.09.06-.18.093-.272a12.6 12.6 0 0 1 .53-1.28c.427-.872.93-1.638 1.48-2.227.18-.19.37-.36.56-.51.27-.21.57-.35.89-.41.34-.06.69-.01 1.01.16.32.17.56.45.69.8.14.36.14.76.01 1.13a2.76 2.76 0 0 1-.61.98 5.6 5.6 0 0 1-1.07.87c-.48.3-.99.55-1.52.75-.15.06-.31.11-.47.16a24.2 24.2 0 0 1-.36 1.48c-.14.48-.3.97-.47 1.44a14.3 14.3 0 0 1-.77 1.76c-.05.1-.1.19-.15.28a7.2 7.2 0 0 1-1.42 1.95c-.43.41-.92.68-1.44.8a2.3 2.3 0 0 1-1.25-.09z"/>
@@ -347,11 +347,11 @@
     <div class="section">
       <h2>Project Origins & Motivation</h2>
       <p>
-        Built during 11th grade at Greenway Modern School, this project was developed collaboratively with my peer Aditya Saroha[cite: 9]. Tasked with designing a functional system using early programming principles, we built an end-to-end airline operations manager purely within the terminal using core Python[cite: 9].
+        Built during 11th grade at Greenway Modern School, this project was developed collaboratively with my peer Aditya Saroha. Tasked with designing a functional system using early programming principles, we built an end-to-end airline operations manager purely within the terminal using core Python.
       </p>
       
       <div class="callout">
-        <strong>Collaborative Design & Early Engineering:</strong> Operating without external graphical frameworks or enterprise databases, we decomposed the platform into independent modules covering authentication, booking pipelines, cancellation ledgers, and flat-file data persistence[cite: 6, 9]. We split development across operational modules, debugged integration bottlenecks together, and co-presented the finished build under the guidance of Mrs. Poonam Makhija[cite: 9].
+        <strong>Collaborative Design & Early Engineering:</strong> Operating without external graphical frameworks or enterprise databases, we decomposed the platform into independent modules covering authentication, booking pipelines, cancellation ledgers, and flat-file data persistence. We split development across operational modules, debugged integration bottlenecks together, and co-presented the finished build under the guidance of Mrs. Poonam Makhija.
       </div>
     </div>
 
@@ -359,12 +359,12 @@
     <div class="section">
       <h2>Multi-Role Operational Flow</h2>
       <p>
-        Engineered around three operational tiers mapped directly to airport and flight management workflows[cite: 9]:
+        Engineered around three operational tiers mapped directly to airport and flight management workflows:
       </p>
       <ul>
-        <li><strong>System Administrator:</strong> Manages airport routing tables (<code>airports.txt</code>), alters pricing/tariffs, and updates flight schedules[cite: 6, 9].</li>
-        <li><strong>Desk Officer:</strong> Handles counter ticketing, assigns seat reservations, searches flight availability, and updates booking manifests (<code>pasng</code>)[cite: 6, 9].</li>
-        <li><strong>Passenger / Customer:</strong> Accesses account authentication, checks flight routes, cancels bookings, and generates verifiable boarding passes[cite: 6, 9].</li>
+        <li><strong>System Administrator:</strong> Manages airport routing tables (<code>airports.txt</code>), alters pricing/tariffs, and updates flight schedules.</li>
+        <li><strong>Desk Officer:</strong> Handles counter ticketing, assigns seat reservations, searches flight availability, and updates booking manifests (<code>pasng</code>).</li>
+        <li><strong>Passenger / Customer:</strong> Accesses account authentication, checks flight routes, cancels bookings, and generates verifiable boarding passes.</li>
       </ul>
     </div>
 
@@ -388,7 +388,7 @@
     <div class="section">
       <h2>Codebase Architecture & File Structure</h2>
       <p>
-        Rather than writing a monolithic script, we organized the repository into modular subsystems mapped to operational airport workflows[cite: 6]:
+        Rather than writing a monolithic script, we organized the repository into modular subsystems mapped to operational airport workflows:
       </p>
 
       <div class="codebase-explorer">
@@ -414,19 +414,19 @@
         <div class="file-details-pane">
           <div class="subsystem-block">
             <h3>Entry & Orchestration (<code>main.py</code>)</h3>
-            <p>Controls terminal startup, presents interactive menus, and coordinates module imports to prevent execution overlap[cite: 6].</p>
+            <p>Controls terminal startup, presents interactive menus, and coordinates module imports to prevent execution overlap.</p>
           </div>
           <div class="subsystem-block">
             <h3>Authentication Gate (<code>login.py</code>)</h3>
-            <p>Validates incoming operator credentials against local data files before allowing access to operational commands[cite: 6].</p>
+            <p>Validates incoming operator credentials against local data files before allowing access to operational commands.</p>
           </div>
           <div class="subsystem-block">
             <h3>Ticketing & Seat Ledger (<code>book.py</code>, <code>cancellation.py</code>)</h3>
-            <p>Reads network routes from <code>airports.txt</code>, adjusts available seat tallies, and commits passenger transactions[cite: 6].</p>
+            <p>Reads network routes from <code>airports.txt</code>, adjusts available seat tallies, and commits passenger transactions.</p>
           </div>
           <div class="subsystem-block">
             <h3>Flat-File Store (<code>data/</code>)</h3>
-            <p>Maintains persistent customer manifests (<code>pasng</code>), generated boarding passes, and system logs without database overhead[cite: 6].</p>
+            <p>Maintains persistent customer manifests (<code>pasng</code>), generated boarding passes, and system logs without database overhead.</p>
           </div>
         </div>
       </div>
@@ -470,8 +470,8 @@ SEAT: 14A | STATUS: CONFIRMED | CLASS: ECONOMY
     <div class="section">
       <h2>Foundational Engineering Takeaways</h2>
       <ul>
-        <li><strong>Early Collaborative Development:</strong> Gained initial experience in dividing software workflows between team members, aligning interfaces, and integrating multi-file systems[cite: 6, 9].</li>
-        <li><strong>Algorithmic Logic Without High-Level Abstractions:</strong> Tackled record persistence, input verification, and menu loops from first principles without depending on pre-built database drivers or web frameworks[cite: 6, 9].</li>
+        <li><strong>Early Collaborative Development:</strong> Gained initial experience in dividing software workflows between team members, aligning interfaces, and integrating multi-file systems.</li>
+        <li><strong>Algorithmic Logic Without High-Level Abstractions:</strong> Tackled record persistence, input verification, and menu loops from first principles without depending on pre-built database drivers or web frameworks.</li>
         <li><strong>Pathway to Hardware & DAQ Systems:</strong> The logic and structured state-handling learned on this project became the direct precursor to scripting automated data acquisition pipelines and aerodynamic test-rig controls at Penn State.</li>
       </ul>
     </div>
