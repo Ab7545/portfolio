@@ -3,8 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Airline Operations Management Engine | Aben Binu</title>
+  <title>Airline Operations Management System | Aben Binu</title>
   <style>
+    /* ========================================================
+       GLOBAL PALETTE & RESET
+       ======================================================== */
     :root {
       --bg: #0d1117;
       --card-bg: #161b22;
@@ -38,6 +41,9 @@
     }
     .back-link:hover { text-decoration: underline; }
 
+    /* ========================================================
+       HEADER & ACTIONS
+       ======================================================== */
     header { 
       margin-bottom: 2rem; 
       border-bottom: 1px solid var(--border); 
@@ -88,6 +94,9 @@
       border: 1px solid rgba(88, 166, 255, 0.2);
     }
 
+    /* ========================================================
+       METRICS CARDS GRID
+       ======================================================== */
     .metrics-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -101,9 +110,12 @@
       padding: 1.1rem 1rem;
       text-align: center;
     }
-    .metric-value { font-size: 1.4rem; font-weight: bold; color: var(--accent); }
+    .metric-value { font-size: 1.35rem; font-weight: bold; color: var(--accent); }
     .metric-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
 
+    /* ========================================================
+       SECTION CONTENT
+       ======================================================== */
     .section { margin-bottom: 3rem; }
     h2 { 
       color: var(--heading); 
@@ -119,7 +131,23 @@
     li { margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text); }
     li strong { color: var(--heading); }
 
-    /* VIDEO CONTAINER RESPONSIVE EMBED */
+    /* ========================================================
+       COLLABORATION CALLOUT BANNER
+       ======================================================== */
+    .callout {
+      background: rgba(88, 166, 255, 0.05);
+      border-left: 3px solid var(--accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0 6px 6px 0;
+      margin: 1.5rem 0;
+      font-size: 0.92rem;
+      color: var(--text);
+    }
+    .callout strong { color: var(--heading); }
+
+    /* ========================================================
+       YOUTUBE EMBED CONTAINER
+       ======================================================== */
     .video-container {
       position: relative;
       padding-bottom: 56.25%; /* 16:9 ratio */
@@ -139,6 +167,9 @@
       border: 0;
     }
 
+    /* ========================================================
+       SYSTEM ARCHITECTURE MODULE CARDS
+       ======================================================== */
     .modules-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -151,8 +182,61 @@
       border-radius: 6px;
       padding: 1.2rem;
     }
-    .module-card h3 { font-size: 1rem; color: var(--heading); margin-bottom: 0.5rem; }
-    .module-card p { font-size: 0.88rem; color: var(--muted); margin-bottom: 0; }
+    .module-card h3 {
+      font-size: 1rem;
+      color: var(--heading);
+      margin-bottom: 0.5rem;
+    }
+    .module-card p {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0;
+    }
+
+    /* ========================================================
+       TERMINAL / CLI PREVIEW
+       ======================================================== */
+    .terminal-window {
+      background: var(--code-bg);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      overflow: hidden;
+      margin: 1.5rem 0;
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    }
+    .terminal-header {
+      background: var(--card-bg);
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .terminal-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+    .dot-red { background: #ff5f56; }
+    .dot-yellow { background: #ffbd2e; }
+    .dot-green { background: #27c93f; }
+    .terminal-title {
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin-left: 0.5rem;
+    }
+    .terminal-body {
+      padding: 1.25rem;
+      font-size: 0.85rem;
+      color: var(--text);
+      line-height: 1.6;
+      white-space: pre-wrap;
+      overflow-x: auto;
+    }
+    .terminal-prompt { color: var(--accent); }
+    .terminal-output { color: var(--terminal-green); }
+    .terminal-dim { color: var(--muted); }
   </style>
 </head>
 <body>
@@ -161,24 +245,23 @@
     
     <!-- HEADER -->
     <header>
-      <h1>Airline Flight & Operations Management System</h1>
+      <h1>Modular Airline Flight Operations Engine</h1>
       <div class="meta">
-        Early Independent Project &bull; Aben Binu &bull; Pure Python (CLI)
+        Greenway Modern School &bull; Co-Developed by Aben Binu & Aditya Saroha &bull; Python CLI Architecture
       </div>
       
       <div class="header-actions">
-        <!-- Replace href with your actual repository link -->
-        <a href="https://github.com/Ab7545/AIRLINE-MANAGEMENT-SYSTEM" target="_blank" rel="noopener noreferrer" class="btn">
+        <a href="https://github.com/Ab7545/Airline_Management_Project" target="_blank" rel="noopener noreferrer" class="btn">
           <svg height="16" width="16" viewBox="0 0 16 16" fill="currentColor">
             <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
           </svg>
-          View Source on GitHub
+          View Source Repository
         </a>
         <div class="tags">
           <span class="tag">Pure Python</span>
-          <span class="tag">Text-Based CLI</span>
-          <span class="tag">File Persistence</span>
-          <span class="tag">First Coding Project</span>
+          <span class="tag">Collaborative Software</span>
+          <span class="tag">File-Based Persistence</span>
+          <span class="tag">CLI System</span>
         </div>
       </div>
     </header>
@@ -186,81 +269,128 @@
     <!-- METRICS -->
     <div class="metrics-grid">
       <div class="metric-card">
-        <div class="metric-value">Pure Python</div>
-        <div class="metric-label">Built From Scratch</div>
+        <div class="metric-value">11th Grade</div>
+        <div class="metric-label">High School Origin</div>
       </div>
       <div class="metric-card">
-        <div class="metric-value">CLI / Menu</div>
-        <div class="metric-label">Terminal Interface</div>
+        <div class="metric-value">2 Developers</div>
+        <div class="metric-label">Collaborative Team</div>
       </div>
       <div class="metric-card">
-        <div class="metric-value">File I/O</div>
-        <div class="metric-label">Data Persistence</div>
+        <div class="metric-value">Multi-Module</div>
+        <div class="metric-label">Separation of Concerns</div>
       </div>
       <div class="metric-card">
-        <div class="metric-value">Independent</div>
-        <div class="metric-label">Foundational Work</div>
+        <div class="metric-value">Zero-Library</div>
+        <div class="metric-label">Standard Python Only</div>
       </div>
     </div>
 
     <!-- OVERVIEW -->
     <div class="section">
-      <h2>Project Overview & Origins</h2>
+      <h2>Project Origins & Motivation</h2>
       <p>
-        Built as an early independent programming project in high school to learn software logic, algorithmic workflows, and practical problem-solving. It is a fully text-based, menu-driven airline reservation and fleet operations manager running completely in Python.
+        Built during 11th grade at Greenway Modern School, this project was developed collaboratively with my peer Aditya Saroha. Tasked with designing a functional system using early programming principles, we built an end-to-end airline operations manager purely within the terminal using core Python.
       </p>
-      <p>
-        Without relying on external third-party frameworks or databases, the program implements core operations including flight schedule viewing, seat availability decrements, ticket reservation, cancellation records, and formatted terminal boarding pass printouts.
-      </p>
+      
+      <div class="callout">
+        <strong>Collaborative Design & Early Engineering:</strong> Operating without external graphical frameworks or enterprise databases, we decomposed the platform into independent modules covering authentication, booking pipelines, cancellation ledgers, and flat-file data persistence. We split development across operational modules, debugged integration bottlenecks together, and co-presented the finished build.
+      </div>
     </div>
 
-    <!-- YOUTUBE VIDEO WALKTHROUGH EMBED -->
+    <!-- VIDEO DEMO -->
     <div class="section">
-      <h2>System Demo & Video Walkthrough</h2>
+      <h2>Runtime Walkthrough</h2>
       <p>
-        Full runtime demonstration of the program handling passenger booking workflows, flight inventory lookup, and file-based state saving:
+        Demonstration recording of the terminal interface executing live authentication, flight searches, customer booking workflows, and boarding pass generation:
       </p>
       <div class="video-container">
-        <!-- REPLACE THE 'VIDEO_ID_HERE' BELOW WITH YOUR ACTUAL YOUTUBE VIDEO ID -->
+        <!-- Replace YOUR_VIDEO_ID_HERE with your YouTube video ID (e.g., https://www.youtube.com/embed/XXXXXX) -->
         <iframe 
-          src="https://www.youtube.com/embed/VIDEO_ID_HERE" 
-          title="Airline Management System Demo" 
+          src="https://youtu.be/PmvVcleuriM?si=27UMRlsiNZXxfW5C" 
+          title="Airline Management System Video Demo" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen>
         </iframe>
       </div>
     </div>
 
-    <!-- ARCHITECTURE MODULES -->
+    <!-- MODULAR SYSTEM ARCHITECTURE -->
     <div class="section">
-      <h2>Core System Features</h2>
+      <h2>Codebase Architecture & File Layout</h2>
+      <p>
+        Rather than writing a monolithic script, we organized the repository into modular subsystems mapped to operational airport workflows:
+      </p>
+
       <div class="modules-grid">
         <div class="module-card">
-          <h3>Flight Schedule Browser</h3>
-          <p>Displays available routes, departure/arrival timings, flight codes, and dynamic seat capacity tallies directly in the terminal.</p>
+          <h3>main.py / Begining file.py</h3>
+          <p>System runtime entry points. Orchestrates introduction screens, manages the primary interactive command-loop, and delegates sub-menus.</p>
         </div>
         <div class="module-card">
-          <h3>Ticketing & Booking Logic</h3>
-          <p>Takes user inputs, validates seat availability, assigns passenger records, and emits an organized booking confirmation.</p>
+          <h3>login.py</h3>
+          <p>Security and authentication gate. Verifies user credentials against local file records before granting operational access.</p>
         </div>
         <div class="module-card">
-          <h3>File-Based Data Logging</h3>
-          <p>Uses standard Python file I/O to read and append customer bookings, ensuring data isn't wiped between terminal runs.</p>
+          <h3>book.py</h3>
+          <p>Reservation pipeline. Coordinates airport routing tables, checks passenger counts, decrements seat inventory, and records transactions.</p>
         </div>
         <div class="module-card">
-          <h3>Cancellation & Refunds</h3>
-          <p>Searches saved records by passenger reference, updates status, and restores seat count back to the flight ledger.</p>
+          <h3>cancellation.py</h3>
+          <p>Ticket voiding mechanism. Locates existing passenger booking tokens, updates cancellation status, and releases seat allocation.</p>
+        </div>
+        <div class="module-card">
+          <h3>service.py</h3>
+          <p>Generates customer boarding documentation, formats output summaries, and embeds interactive terminal utility modules (Game_1, IQchecker).</p>
+        </div>
+        <div class="module-card">
+          <h3>/data Storage Subsystem</h3>
+          <p>Persistent flat-file database managing credential registries, airport networks (airports.txt), passenger rosters (pasng), and issued passes.</p>
         </div>
       </div>
     </div>
 
-    <!-- REFLECTION / LESSONS -->
+    <!-- TERMINAL INTERACTION PREVIEW -->
     <div class="section">
-      <h2>What I Learned</h2>
+      <h2>Terminal CLI Interaction</h2>
+      <div class="terminal-window">
+        <div class="terminal-header">
+          <span class="terminal-dot dot-red"></span>
+          <span class="terminal-dot dot-yellow"></span>
+          <span class="terminal-dot dot-green"></span>
+          <span class="terminal-title">python &mdash; main.py</span>
+        </div>
+        <div class="terminal-body"><span class="terminal-dim">=======================================================
+          AIRLINE OPERATIONS MANAGEMENT SYSTEM
+              Greenway Modern School &bull; Class XI
+=======================================================</span>
+[1] View Scheduled Routes & Airports
+[2] Reserve Seat & Generate Booking
+[3] Cancel Ticket & Refund Allocation
+[4] Display & Print Boarding Pass
+[5] In-Flight Terminal Services & Utilities
+[6] Exit Application
+
+<span class="terminal-prompt">&gt; Select Menu Choice [1-6]:</span> 2
+<span class="terminal-dim">[STATUS] Parsing 'data/airports.txt' routing database...</span>
+<span class="terminal-prompt">&gt; Enter Origin & Destination:</span> DEL &rarr; BOM
+<span class="terminal-prompt">&gt; Passenger Name:</span> Aben Binu
+<span class="terminal-output">[SUCCESS] Seat Allocated. Record appended to 'data/pasng'.</span>
+
+-------------------------------------------------------
+BOARDING PASS GENERATED | ROUTE: DEL -> BOM
+SEAT: 14A | STATUS: CONFIRMED | CLASS: ECONOMY
+-------------------------------------------------------</div>
+      </div>
+    </div>
+
+    <!-- REFLECTION / VALUE -->
+    <div class="section">
+      <h2>Foundational Engineering Takeaways</h2>
       <ul>
-        <li><strong>Algorithmic Control Flow:</strong> Mastered loops, conditionals, and functional decomposition to build a reliable interactive menu loop without fatal crashes.</li>
-        <li><strong>Data Handling Without Databases:</strong> Learned the foundations of file read/write modes, formatted strings, and parsing data records from flat files.</li>
-        <li><strong>Engineering Foundation:</strong> Served as my initial hands-on dive into software design, which directly carried over into writing DAQ scripts and processing aerothermal data at Penn State.</li>
+        <li><strong>Early Collaborative Development:</strong> Gained initial experience in dividing software workflows between team members, aligning interfaces, and integrating multi-file systems.</li>
+        <li><strong>Algorithmic Logic Without High-Level Abstractions:</strong> Tackled record persistence, input verification, and menu loops from first principles without depending on pre-built database drivers or web frameworks.</li>
+        <li><strong>Pathway to Hardware & DAQ Systems:</strong> The logic and structured state-handling learned on this project became the direct precursor to scripting automated data acquisition pipelines and aerodynamic test-rig controls at Penn State.</li>
       </ul>
     </div>
   </div>
