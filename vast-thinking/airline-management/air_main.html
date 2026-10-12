@@ -168,28 +168,76 @@
     }
 
     /* ========================================================
-       SYSTEM ARCHITECTURE MODULE CARDS
+       CODEBASE EXPLORER (SPLIT VIEW)
        ======================================================== */
-    .modules-grid {
+    .codebase-explorer {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 1.25rem;
-      margin: 1.5rem 0;
-    }
-    .module-card {
+      grid-template-columns: 260px 1fr;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 6px;
-      padding: 1.2rem;
+      overflow: hidden;
+      margin: 1.5rem 0;
     }
-    .module-card h3 {
-      font-size: 1rem;
-      color: var(--heading);
-      margin-bottom: 0.5rem;
+
+    @media (max-width: 720px) {
+      .codebase-explorer { grid-template-columns: 1fr; }
     }
-    .module-card p {
-      font-size: 0.88rem;
+
+    .file-tree-pane {
+      background: #090d13;
+      border-right: 1px solid var(--border);
+      padding: 1.25rem 1rem;
+      font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+      font-size: 0.82rem;
+    }
+
+    .tree-title {
       color: var(--muted);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.75rem;
+    }
+
+    .tree-list { list-style: none; margin: 0; padding: 0; }
+    .tree-item {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      padding: 0.3rem 0.4rem;
+      border-radius: 4px;
+      color: var(--text);
+    }
+    .tree-item.folder { color: var(--accent); font-weight: 600; margin-top: 0.4rem; }
+    .tree-item.indent { padding-left: 1.3rem; color: var(--muted); font-size: 0.78rem; }
+    .tree-item .badge {
+      margin-left: auto;
+      font-size: 0.68rem;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.05);
+      padding: 0.1rem 0.35rem;
+      border-radius: 3px;
+    }
+
+    .file-details-pane {
+      padding: 1.25rem 1.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .subsystem-block { margin-bottom: 1rem; }
+    .subsystem-block:last-child { margin-bottom: 0; }
+    .subsystem-block h3 {
+      font-size: 0.95rem;
+      color: var(--heading);
+      margin-bottom: 0.25rem;
+    }
+    .subsystem-block p {
+      font-size: 0.86rem;
+      color: var(--muted);
+      line-height: 1.45;
       margin-bottom: 0;
     }
 
@@ -228,7 +276,7 @@
     }
     .terminal-body {
       padding: 1.25rem;
-      font-size: 0.85rem;
+      font-size: 0.83rem;
       color: var(--text);
       line-height: 1.6;
       white-space: pre-wrap;
@@ -305,9 +353,8 @@
         Demonstration recording of the terminal interface executing live authentication, flight searches, customer booking workflows, and boarding pass generation:
       </p>
       <div class="video-container">
-        <!-- Replace YOUR_VIDEO_ID_HERE with your YouTube video ID (e.g., https://www.youtube.com/embed/XXXXXX) -->
         <iframe 
-          src="https://youtu.be/PmvVcleuriM?si=27UMRlsiNZXxfW5C" 
+          src="https://www.youtube-nocookie.com/embed/PmvVcleuriM" 
           title="Airline Management System Video Demo" 
           allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
           allowfullscreen>
@@ -315,42 +362,55 @@
       </div>
     </div>
 
-    <!-- MODULAR SYSTEM ARCHITECTURE -->
+    <!-- CODEBASE ARCHITECTURE & FILE LAYOUT -->
     <div class="section">
-      <h2>Codebase Architecture & File Layout</h2>
+      <h2>Codebase Architecture & File Structure</h2>
       <p>
         Rather than writing a monolithic script, we organized the repository into modular subsystems mapped to operational airport workflows:
       </p>
 
-      <div class="modules-grid">
-        <div class="module-card">
-          <h3>main.py / Begining file.py</h3>
-          <p>System runtime entry points. Orchestrates introduction screens, manages the primary interactive command-loop, and delegates sub-menus.</p>
+      <div class="codebase-explorer">
+        <!-- REPO FILE TREE -->
+        <div class="file-tree-pane">
+          <div class="tree-title">Repository Tree</div>
+          <ul class="tree-list">
+            <li class="tree-item">&#128196; main.py <span class="badge">Entry</span></li>
+            <li class="tree-item">&#128196; Begining file.py <span class="badge">Init</span></li>
+            <li class="tree-item">&#128196; login.py <span class="badge">Auth</span></li>
+            <li class="tree-item">&#128196; book.py <span class="badge">Reserve</span></li>
+            <li class="tree-item">&#128196; cancellation.py <span class="badge">Refund</span></li>
+            <li class="tree-item">&#128196; service.py <span class="badge">Docs</span></li>
+            <li class="tree-item folder">&#128193; data/</li>
+            <li class="tree-item indent">&#128196; airports.txt</li>
+            <li class="tree-item indent">&#128196; pasng</li>
+            <li class="tree-item indent">&#128196; boarding</li>
+            <li class="tree-item indent">&#128196; login</li>
+          </ul>
         </div>
-        <div class="module-card">
-          <h3>login.py</h3>
-          <p>Security and authentication gate. Verifies user credentials against local file records before granting operational access.</p>
-        </div>
-        <div class="module-card">
-          <h3>book.py</h3>
-          <p>Reservation pipeline. Coordinates airport routing tables, checks passenger counts, decrements seat inventory, and records transactions.</p>
-        </div>
-        <div class="module-card">
-          <h3>cancellation.py</h3>
-          <p>Ticket voiding mechanism. Locates existing passenger booking tokens, updates cancellation status, and releases seat allocation.</p>
-        </div>
-        <div class="module-card">
-          <h3>service.py</h3>
-          <p>Generates customer boarding documentation, formats output summaries, and embeds interactive terminal utility modules (Game_1, IQchecker).</p>
-        </div>
-        <div class="module-card">
-          <h3>/data Storage Subsystem</h3>
-          <p>Persistent flat-file database managing credential registries, airport networks (airports.txt), passenger rosters (pasng), and issued passes.</p>
+
+        <!-- SUBSYSTEM LOGIC BREAKDOWN -->
+        <div class="file-details-pane">
+          <div class="subsystem-block">
+            <h3>Entry & Orchestration (<code>main.py</code>)</h3>
+            <p>Controls terminal startup, presents interactive menus, and coordinates module imports to prevent execution overlap[cite: 8].</p>
+          </div>
+          <div class="subsystem-block">
+            <h3>Authentication Gate (<code>login.py</code>)</h3>
+            <p>Validates incoming operator credentials against local data files before allowing access to operational commands[cite: 8].</p>
+          </div>
+          <div class="subsystem-block">
+            <h3>Ticketing & Seat Ledger (<code>book.py</code>, <code>cancellation.py</code>)</h3>
+            <p>Reads network routes from <code>airports.txt</code>, adjusts available seat tallies, and commits passenger transactions[cite: 8].</p>
+          </div>
+          <div class="subsystem-block">
+            <h3>Flat-File Store (<code>data/</code>)</h3>
+            <p>Maintains persistent customer manifests (<code>pasng</code>), generated boarding passes, and system logs without database overhead[cite: 8].</p>
+          </div>
         </div>
       </div>
     </div>
 
-    <!-- TERMINAL INTERACTION PREVIEW -->
+    <!-- TERMINAL CLI INTERACTION -->
     <div class="section">
       <h2>Terminal CLI Interaction</h2>
       <div class="terminal-window">
