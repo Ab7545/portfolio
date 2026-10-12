@@ -289,6 +289,72 @@
       border: 1px solid rgba(88, 166, 255, 0.2);
     }
 
+    /* Schedule / Connect Section */
+    .schedule-wrapper {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 2.5rem;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .schedule-info h3 {
+      color: var(--heading);
+      font-size: 1.25rem;
+      margin-bottom: 0.75rem;
+      letter-spacing: 0.05em;
+    }
+
+    .schedule-info p {
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin-bottom: 1.75rem;
+    }
+
+    .schedule-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: rgba(88, 166, 255, 0.12);
+      color: var(--accent);
+      border: 1px solid rgba(88, 166, 255, 0.35);
+      padding: 0.85rem 1.6rem;
+      border-radius: 6px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      transition: all 0.25s ease;
+    }
+
+    .schedule-btn:hover {
+      background: var(--accent);
+      color: var(--bg);
+      border-color: var(--accent);
+      transform: translateY(-2px);
+      box-shadow: 0 4px 16px rgba(88, 166, 255, 0.25);
+    }
+
+    .calendar-container {
+      width: 100%;
+      height: 520px;
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: #ffffff;
+    }
+
+    .calendar-container iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
     /* Subtle Native Scroll Reveal */
     .reveal {
       opacity: 0;
@@ -340,6 +406,13 @@
       .about-grid {
         grid-template-columns: 1fr;
       }
+      .schedule-wrapper {
+        grid-template-columns: 1fr;
+        padding: 1.5rem;
+      }
+      .calendar-container {
+        height: 480px;
+      }
     }
   </style>
 </head>
@@ -352,6 +425,7 @@
       <li><a href="#about">About</a></li>
       <li><a href="#projects">Projects</a></li>
       <li><a href="#vast-thinking">Vast Thinking</a></li>
+      <li><a href="#schedule">Schedule</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
   </nav>
@@ -454,11 +528,35 @@
     </div>
   </section>
 
+  <!-- Schedule / Booking Section -->
+  <section id="schedule" class="container reveal">
+    <h2 class="section-title">Connect & Schedule</h2>
+    <div class="schedule-wrapper">
+      <div class="schedule-info">
+        <h3>Schedule a Quick Chat</h3>
+        <p>
+          Open for technical discussions, aerothermal research inquiries, SAE AeroDesign collaboration, and academic networking. Select an available window directly on the calendar or open the full scheduler in a new tab.
+        </p>
+        <a href="https://calendar.app.google/QYv6wTu54sTKXQD57" target="_blank" rel="noopener noreferrer" class="schedule-btn">
+          Open Calendar Directly <span>&nearr;</span>
+        </a>
+      </div>
+      <div class="calendar-container">
+        <iframe 
+          src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0l-U0g1X2j0R2-bQ_xW8vI0R6b1C8e7tY?gv=true" 
+          title="Google Calendar Appointment Scheduling"
+          loading="lazy">
+        </iframe>
+      </div>
+    </div>
+  </section>
+
   <!-- Footer -->
   <footer id="contact">
     <div class="links">
-      <a href="https://www.linkedin.com/in/aben-binu-a86a42310/" target="_blank">LinkedIn</a>
-      <a href="https://github.com/Ab7545" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/aben-binu-a86a42310/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      <a href="https://github.com/Ab7545" target="_blank" rel="noopener noreferrer">GitHub</a>
+      <a href="https://calendar.app.google/QYv6wTu54sTKXQD57" target="_blank" rel="noopener noreferrer">Schedule</a>
       <a href="mailto:abenbinumadukkathil@gmail.com">Email</a>
     </div>
     <p>&copy; 2026 Aben Binu. All rights reserved.</p>
