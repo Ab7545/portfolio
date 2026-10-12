@@ -82,6 +82,7 @@
 
     /* Hero Section */
     .hero {
+      position: relative;
       min-height: 100vh;
       display: flex;
       flex-direction: column;
@@ -90,7 +91,23 @@
       text-align: center;
       padding: 2rem;
       border-bottom: 1px solid var(--border);
-      background: linear-gradient(rgba(13, 17, 23, 0.6), rgba(13, 17, 23, 0.8)), url('hero.jpg') center/cover no-repeat;
+      background: linear-gradient(rgba(13, 17, 23, 0.7), rgba(13, 17, 23, 0.85)), url('hero.jpg') center/cover no-repeat;
+      overflow: hidden;
+    }
+
+    #aero-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
     }
 
     .divider {
@@ -188,6 +205,7 @@
     }
 
     .card {
+      position: relative;
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 8px;
@@ -196,8 +214,32 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
       cursor: pointer;
+      overflow: hidden;
+    }
+
+    /* Radial mouse follow glow on card hover */
+    .card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: radial-gradient(
+        300px circle at var(--mouse-x, -200px) var(--mouse-y, -200px),
+        rgba(88, 166, 255, 0.12),
+        transparent 80%
+      );
+      border-radius: inherit;
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .card:hover::before {
+      opacity: 1;
     }
 
     .card:hover {
@@ -208,7 +250,7 @@
 
     .card h3 {
       color: var(--heading);
-      font-size: 1.2rem;
+      font-size: 1.05rem;
       margin-bottom: 0.6rem;
       display: flex;
       justify-content: space-between;
@@ -245,6 +287,18 @@
       padding: 0.25rem 0.6rem;
       border-radius: 4px;
       border: 1px solid rgba(88, 166, 255, 0.2);
+    }
+
+    /* Subtle Native Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+    }
+
+    .reveal.active {
+      opacity: 1;
+      transform: translateY(0);
     }
 
     /* Footer */
@@ -304,53 +358,55 @@
 
   <!-- Hero Landing -->
   <header id="home" class="hero">
-    <div class="divider"></div>
-    <h1>Aben Binu</h1>
-    <div class="divider"></div>
-    <div class="subtitle">Pennsylvania State University '28</div>
-    <div class="degree">B.S. Aerospace Engineering | Schreyer Honors College</div>
+    <canvas id="aero-canvas"></canvas>
+    <div class="hero-content">
+      <div class="divider"></div>
+      <h1>Aben Binu</h1>
+      <div class="divider"></div>
+      <div class="subtitle">Pennsylvania State University '28</div>
+      <div class="degree">B.S. Aerospace Engineering | Schreyer Honors College</div>
+    </div>
   </header>
 
   <!-- Modular About Section -->
-  <section id="about" class="container"></section>
+  <section id="about" class="container reveal"></section>
 
   <!-- Projects Section (Clickable Cards) -->
-  <section id="projects" class="container">
+  <section id="projects" class="container reveal">
     <h2 class="section-title">Focus & Projects</h2>
     <div class="grid">
 
-      <!-- PROJECT 1: Replace 'gimas-lab.html' with your target filename -->
-     <div class="card" onclick="location.href='projects/vortex_generators/boundary-layer-ht.html'" style="cursor: pointer;">
-        <div style="display: flex; justify-content: space-between; align-items: flex-start;">
-          <h3>Heat Transfer Enhancement</h3>
-          <span style="color: var(--accent); font-size: 0.9rem;">↗</span>
+      <!-- PROJECT 1 -->
+      <a href="projects/vortex_generators/boundary-layer-ht.html" class="card">
+        <div>
+          <h3>Heat Transfer Enhancement <span class="arrow">&nearr;</span></h3>
+          <p>Boundary-layer flow control and aerothermal testing across Re = 3k–30k.</p>
         </div>
-        <p>Boundary-layer flow control and aerothermal testing across Re = 3k–30k.</p>
         <div class="tags">
           <span class="tag">Experimental DAQ</span>
           <span class="tag">MATLAB</span>
           <span class="tag">IHTC-18</span>
         </div>
-      </div>
+      </a>
 
       <!-- PROJECT 2: Small Fan Distortion Transition Duct -->
       <a href="projects/small_fan_disstortion/small_fan_distortion.html" class="card">
         <div>
-          <h3>Inlet Distortion Rig & CAD <span class="arrow">&nearr;</span></h3>
+          <h3>Wind Tunnel Transition Duct <span class="arrow">&nearr;</span></h3>
           <p>Smooth square-to-round contraction duct design for BLI experiment.</p>
         </div>
         <div class="tags">
           <span class="tag">SolidWorks</span>
-          <span class="tag">FEA Analysis</span>
-          <span class="tag">Inlet Aerodynamics</span>
+          <span class="tag">Assembly CAD</span>
+          <span class="tag">Wind Tunnel</span>
           <span class="tag">DFM</span>
         </div>
       </a>
 
-      <!-- PROJECT 3: Replace 'flight-systems.html' with your target filename -->
+      <!-- PROJECT 3: Flight Systems -->
       <a href="flight-systems.html" class="card">
         <div>
-          <h3>Flight Systems <span class="arrow">↗</span></h3>
+          <h3>Flight Systems <span class="arrow">&nearr;</span></h3>
           <p>Telemetry, PCB design for test hardware, and embedded controls integration.</p>
         </div>
         <div class="tags">
@@ -364,7 +420,7 @@
   </section>
 
   <!-- Vast Thinking Section (Clickable Cards) -->
-  <section id="vast-thinking" class="container">
+  <section id="vast-thinking" class="container reveal">
     <h2 class="section-title">Foundation & Early Work</h2>
     <div class="grid">
 
@@ -382,7 +438,7 @@
       </a>
 
       <!-- High school: Airline Management System -->
-      <a href="vast-thinking/airline-management/air_main.html" class="card">
+      <a href="projects/airline_management/airline_management.html" class="card">
         <div>
           <h3>Airline Operations Engine <span class="arrow">&nearr;</span></h3>
           <p>Modular Python CLI handling flight scheduling, automated booking pipelines, passenger persistence, and boarding passes.</p>
@@ -419,6 +475,94 @@
         document.getElementById('about').innerHTML = html;
       })
       .catch(err => console.error(err));
+  </script>
+
+  <!-- Animations & Interactions -->
+  <script>
+    /* 1. AERODYNAMIC STREAMLINE PARTICLES */
+    const canvas = document.getElementById('aero-canvas');
+    if (canvas) {
+      const ctx = canvas.getContext('2d');
+      let width = (canvas.width = canvas.parentElement.offsetWidth);
+      let height = (canvas.height = canvas.parentElement.offsetHeight);
+
+      window.addEventListener('resize', () => {
+        width = canvas.width = canvas.parentElement.offsetWidth;
+        height = canvas.height = canvas.parentElement.offsetHeight;
+      });
+
+      let mouse = { x: -1000, y: -1000 };
+      window.addEventListener('mousemove', (e) => {
+        const rect = canvas.getBoundingClientRect();
+        mouse.x = e.clientX - rect.left;
+        mouse.y = e.clientY - rect.top;
+      });
+
+      const particles = Array.from({ length: 45 }, () => ({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        speed: 1.0 + Math.random() * 1.5,
+        length: 25 + Math.random() * 30,
+        baseY: 0
+      }));
+
+      particles.forEach(p => p.baseY = p.y);
+
+      function renderFlow() {
+        ctx.clearRect(0, 0, width, height);
+
+        particles.forEach(p => {
+          const dx = p.x - mouse.x;
+          const dy = p.y - mouse.y;
+          const dist = Math.hypot(dx, dy);
+
+          if (dist < 120) {
+            const angle = Math.atan2(dy, dx);
+            const force = (120 - dist) / 120;
+            p.y += Math.sin(angle) * force * 2.5;
+          } else {
+            p.y += (p.baseY - p.y) * 0.04;
+          }
+
+          p.x += p.speed;
+          if (p.x > width) {
+            p.x = -p.length;
+            p.baseY = Math.random() * height;
+            p.y = p.baseY;
+          }
+
+          ctx.strokeStyle = 'rgba(88, 166, 255, 0.18)';
+          ctx.lineWidth = 1.2;
+          ctx.beginPath();
+          ctx.moveTo(p.x, p.y);
+          ctx.lineTo(p.x - p.length, p.y);
+          ctx.stroke();
+        });
+
+        requestAnimationFrame(renderFlow);
+      }
+      renderFlow();
+    }
+
+    /* 2. CARD RADIAL SPOTLIGHT TRACKER */
+    document.querySelectorAll('.card').forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', `${e.clientX - rect.left}px`);
+        card.style.setProperty('--mouse-y', `${e.clientY - rect.top}px`);
+      });
+    });
+
+    /* 3. SCROLL REVEAL OBSERVER */
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('active');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
   </script>
 
 </body>
