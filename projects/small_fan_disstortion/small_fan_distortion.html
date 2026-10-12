@@ -3,11 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Inlet Distortion & Transition Duct Design | Aben Binu</title>
+  <title>Inlet Transition Duct Rig | Aben Binu</title>
   <style>
-    /* ========================================================
-       GLOBAL PALETTE & RESET
-       ======================================================== */
     :root {
       --bg: #0d1117;
       --card-bg: #161b22;
@@ -39,12 +36,9 @@
     }
     .back-link:hover { text-decoration: underline; }
 
-    /* ========================================================
-       HEADER & TAGS
-       ======================================================== */
     header { margin-bottom: 2rem; border-bottom: 1px solid var(--border); padding-bottom: 1.5rem; }
-    h1 { color: var(--heading); font-size: clamp(1.6rem, 3.5vw, 2.3rem); line-height: 1.25; margin-bottom: 0.75rem; }
-    .meta { color: var(--muted); font-size: 0.95rem; margin-bottom: 1rem; }
+    h1 { color: var(--heading); font-size: clamp(1.6rem, 3.5vw, 2.2rem); line-height: 1.25; margin-bottom: 0.75rem; }
+    .meta { color: var(--muted); font-size: 0.95rem; }
     
     .tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
     .tag {
@@ -56,9 +50,6 @@
       border: 1px solid rgba(88, 166, 255, 0.2);
     }
 
-    /* ========================================================
-       METRICS CARDS GRID
-       ======================================================== */
     .metrics-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -72,16 +63,13 @@
       padding: 1.1rem 1rem;
       text-align: center;
     }
-    .metric-value { font-size: 1.6rem; font-weight: bold; color: var(--accent); }
+    .metric-value { font-size: 1.5rem; font-weight: bold; color: var(--accent); }
     .metric-label { font-size: 0.75rem; color: var(--muted); margin-top: 0.25rem; text-transform: uppercase; letter-spacing: 0.05em; }
 
-    /* ========================================================
-       GENERAL SECTION STYLING
-       ======================================================== */
     .section { margin-bottom: 3rem; }
     h2 { 
       color: var(--heading); 
-      font-size: 1.2rem; 
+      font-size: 1.15rem; 
       text-transform: uppercase; 
       letter-spacing: 0.08em; 
       margin-bottom: 1rem; 
@@ -93,9 +81,6 @@
     li { margin-bottom: 0.5rem; font-size: 0.95rem; color: var(--text); }
     li strong { color: var(--heading); }
 
-    /* ========================================================
-       SHOWCASE MEDIA & GRIDS
-       ======================================================== */
     .showcase-card {
       background: var(--card-bg);
       border: 1px solid var(--border);
@@ -116,12 +101,8 @@
       max-height: 480px;
       object-fit: contain;
       display: block;
-      padding: 1rem;
+      padding: 0.75rem;
       margin: 0 auto;
-      transition: transform 0.2s ease;
-    }
-    .showcase-card a:hover img {
-      transform: scale(1.01);
     }
     .showcase-card .caption {
       padding: 1rem 1.25rem;
@@ -142,16 +123,9 @@
       gap: 1.5rem;
       margin-bottom: 2rem;
     }
-    .showcase-row .showcase-card {
-      margin-bottom: 0;
-    }
-    .showcase-row .showcase-card img {
-      max-height: 300px;
-    }
+    .showcase-row .showcase-card { margin-bottom: 0; }
+    .showcase-row .showcase-card img { max-height: 320px; }
 
-    /* ========================================================
-       TRADE STUDY COMPARISON TABLE
-       ======================================================== */
     .table-container {
       overflow-x: auto;
       margin: 1.5rem 0;
@@ -164,10 +138,7 @@
       text-align: left;
       font-size: 0.88rem;
     }
-    th, td {
-      padding: 0.75rem 1rem;
-      border-bottom: 1px solid var(--border);
-    }
+    th, td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--border); }
     th {
       background-color: var(--card-bg);
       color: var(--heading);
@@ -183,127 +154,97 @@
   <div class="container">
     <a href="../../index.html" class="back-link">&larr; Back to Portfolio</a>
     
-    <!-- ========================================================
-         HEADER & METADATA
-         ======================================================== -->
+    <!-- HEADER -->
     <header>
-      <h1>Small Fan Distortion Experiment: Inlet Transition & Screen Rig</h1>
+      <h1>Small Fan Distortion Experiment: Transition Rig Design</h1>
       <div class="meta">
-        GIMAS Lab, Penn State &bull; Design Lead: Aben Binu &bull; September 2026
+        GIMAS Lab &bull; Aben Binu &bull; September 2026
       </div>
       <div class="tags">
-        <span class="tag">Aerodynamic CAD</span>
-        <span class="tag">SolidWorks</span>
-        <span class="tag">FEA Stress Analysis</span>
-        <span class="tag">DFM & Material Selection</span>
-        <span class="tag">Inlet Distortion</span>
+        <span class="tag">SolidWorks CAD</span>
+        <span class="tag">Assembly Modeling</span>
+        <span class="tag">Wind Tunnel Hardware</span>
+        <span class="tag">Material Trade Study</span>
       </div>
     </header>
 
-    <!-- ========================================================
-         METRICS GRID
-         ======================================================== -->
+    <!-- METRICS -->
     <div class="metrics-grid">
       <div class="metric-card">
-        <div class="metric-value">12" &rarr; 6"</div>
-        <div class="metric-label">Inlet Contraction</div>
+        <div class="metric-value">Square &rarr; Round</div>
+        <div class="metric-label">Lofted Transition</div>
       </div>
       <div class="metric-card">
-        <div class="metric-value">1.5 D<sub>fan</sub></div>
-        <div class="metric-label">Duct Length Scale</div>
+        <div class="metric-value">6.065" ID</div>
+        <div class="metric-label">Sch 40 Pipe Bore</div>
       </div>
       <div class="metric-card">
-        <div class="metric-value">18 MPa</div>
-        <div class="metric-label">Peak Screen Stress</div>
-      </div>
-      <div class="metric-card">
-        <div class="metric-value">Sch 40</div>
-        <div class="metric-label">Optical Duct Standard</div>
+        <div class="metric-value">Flanged</div>
+        <div class="metric-label">Modular Screen Collar</div>
       </div>
     </div>
 
-    <!-- ========================================================
-         SECTION: PROJECT OVERVIEW
-         ======================================================== -->
+    <!-- OVERVIEW -->
     <div class="section">
-      <h2>Project Overview & Objectives</h2>
+      <h2>Project Overview & Initial Design</h2>
       <p>
-        Designed an aerodynamic contraction assembly and distortion screen holding rig for the GIMAS Lab Small Fan Distortion experiment. The test section interfaces upstream wind tunnel flow straighteners with a downstream ducted fan propulsor to evaluate propulsor response to distorted inflow profiles.
-      </p>
+        Developing preliminary mechanical hardware and ducting concepts for the GIMAS Lab Small Fan Distortion experiment. This phase focuses on the CAD design, mounting architecture, and structural checks needed to connect an existing wind tunnel working section to a small ducted fan propulsor.      </p>
       <p>
-        The geometry transforms a 12-inch square wind tunnel working section down to a 6-inch diameter circular duct. The contraction length was benchmarked against the MIT Gas Turbine Laboratory (GTL) 1x1 ft wind tunnel working section architecture to avoid boundary layer separation and adverse wall pressure gradients.
-      </p>
+        The current concept adapts a 12-inch square tunnel cross-section down to a 6-inch circular duct using a smooth contraction loft inspired by the MIT Gas Turbine Lab (GTL) test architecture. Work completed includes preliminary SolidWorks models, flanged screen interfaces, stress evaluations on the screen mesh, and material trade studies for the ducting.      </p>
     </div>
 
-    <!-- ========================================================
-         SECTION: CAD GEOMETRY & ARCHITECTURE
-         ======================================================== -->
+    <!-- FULL TEST RIG ASSEMBLY -->
     <div class="section">
-      <h2>Transition Duct CAD Architecture</h2>
-
-      <!-- Primary Transition Duct Assembly -->
+      <h2>Full Test Section CAD Assembly</h2>
+      
       <div class="showcase-card">
-        <a href="transition_duct_assembly.png" target="_blank" rel="noopener noreferrer">
-          <img src="transition_duct_assembly.png" alt="Transition Duct CAD Isometric Assembly" />
+        <a href="test_rig_assembly.png" target="_blank" rel="noopener noreferrer">
+          <!-- PASTE YOUR FULL SOLIDWORKS ASSEMBLY SCREENSHOT HERE -->
+          <img src="test_rig_assembly.png" alt="Small Fan Distortion Full Test Section Assembly CAD" />
         </a>
         <div class="caption">
-          <strong>Square-to-Circular Contraction Loft</strong>
-          Contoured transition duct featuring an upstream 12-inch flanged interface, smooth lofting to eliminate abrupt internal corners, and a 6-inch concentric circular collar interface for downstream duct insertion.
+          <strong>Complete Flow Loop Integration</strong>
+          Full test section assembly modeled in SolidWorks, showcasing the twin square-to-circular transition ducts, transparent center pipe section, embedded ducted fan unit, and flanged bolt interfaces.
         </div>
       </div>
+    </div>
+
+    <!-- LEFT & RIGHT TRANSITION DUCTS -->
+    <div class="section">
+      <h2>Transition Duct Geometry & Hardware</h2>
 
       <div class="showcase-row">
-        <!-- Duct Front View / Collar -->
+        <!-- DUCT LEFT -->
         <div class="showcase-card">
-          <a href="transition_duct_collar.png" target="_blank" rel="noopener noreferrer">
-            <img src="transition_duct_collar.png" alt="Transition Duct Collar and Flange Alignment" />
+          <a href="transition_duct_left.png" target="_blank" rel="noopener noreferrer">
+            <!-- PASTE YOUR SLIDE 2 (TRANSITION DUCT LEFT) IMAGE HERE -->
+            <img src="transition_duct_left.png" alt="Transition Duct Left CAD and Features" />
           </a>
           <div class="caption">
-            <strong>Collar & Screen Alignment</strong>
-            Circular bore collar with pre-drilled bolt flanges to mount distortion/blank screens and secure test section piping with repeatable radial clocking.
+            <strong>Transition Duct Left (Inlet Interface)</strong>
+            Smooth square-to-circular loft designed for guided airflow. Features collar alignment to securely fit the middle pipe and hold the distortion screen, with pre-drilled flange bolt holes for precise placement.
           </div>
         </div>
 
-        <!-- Working Section Schematic Benchmark -->
+        <!-- DUCT RIGHT -->
         <div class="showcase-card">
-          <a href="mit_gtl_benchmark.png" target="_blank" rel="noopener noreferrer">
-            <img src="mit_gtl_benchmark.png" alt="MIT GTL 1x1 ft wind tunnel working section schematic" />
+          <a href="transition_duct_right.png" target="_blank" rel="noopener noreferrer">
+            <!-- PASTE YOUR SLIDE 3 (TRANSITION DUCT RIGHT) IMAGE HERE -->
+            <img src="transition_duct_right.png" alt="Transition Duct Right CAD and Features" />
           </a>
           <div class="caption">
-            <strong>Aerodynamic Architecture Reference</strong>
-            Station layout adapted from the MIT GTL 1x1 ft wind tunnel standard, establishing Kiel probe stations, static taps, distortion screens, and a constant area duct length of L = 1.5 D<sub>fan</sub>.
+            <strong>Transition Duct Right (Propulsor Interface)</strong>
+            Circular bore collar designed so the fan slides directly into place for a secure mechanical fit. Interior surfaces are smoothed out to eliminate abrupt edges and flow disturbances[cite: 6].
           </div>
         </div>
       </div>
     </div>
 
-    <!-- ========================================================
-         SECTION: FEA STRUCTURAL EVALUATION
-         ======================================================== -->
+    <!-- MATERIAL TRADE STUDY -->
     <div class="section">
-      <h2>Distortion Screen Structural Validation (FEA)</h2>
+      <h2>Duct Material Trade Study</h2>
       <p>
-        A finite element analysis was conducted on the honeycomb flow-conditioning/distortion screen to verify structural integrity under maximum aerodynamic dynamic pressure loading.
-      </p>
-
-      <div class="showcase-card">
-        <a href="honeycomb_fea_stress.png" target="_blank" rel="noopener noreferrer">
-          <img src="honeycomb_fea_stress.png" alt="Distortion Screen von Mises FEA Stress Distribution" />
-        </a>
-        <div class="caption">
-          <strong>von Mises Stress Distribution (&sigma;<sub>max</sub> &approx; 18 MPa)</strong>
-          Simulated under uniform aerodynamic drag loads. Peak stresses concentrate along outer perimeter cell junctions, remaining well within allowable yield margins for precision additive/subtractive tooling.
-        </div>
-      </div>
-    </div>
-
-    <!-- ========================================================
-         SECTION: DFM & MATERIAL SELECTION TRADE STUDY
-         ======================================================== -->
-    <div class="section">
-      <h2>Material Selection Trade Study (Ducting)</h2>
-      <p>
-        The middle test section required a 6-inch nominal bore matching Schedule 40 dimensional tolerances (6.065-inch inner diameter, 6.625-inch outer diameter) while providing optical access for flow diagnostics.
+        The middle test pipe required a nominal 6-inch bore conforming to Schedule 40 dimensional standards (6.065-inch inner diameter, 6.625-inch outer diameter) while enabling optical flow visibility[cite: 4].
       </p>
 
       <div class="table-container">
@@ -312,41 +253,36 @@
             <tr>
               <th>Material</th>
               <th>Optical Clarity</th>
-              <th>Thermal / Rigidity</th>
+              <th>Structural Rigidity</th>
               <th>Availability & Cost</th>
-              <th>Design Decision</th>
+              <th>Design Verdict</th>
             </tr>
           </thead>
           <tbody>
             <tr class="highlight-row">
               <td><strong>Clear PVC (Sch 40)</strong></td>
-              <td>High (adequate for camera tracking)</td>
+              <td>High optical visibility</td>
               <td>Good structural wall thickness (0.280")</td>
-              <td>Off-the-shelf standard sizes; lowest cost</td>
-              <td><strong>Primary Choice:</strong> Exact fit for standard flanges</td>
+              <td>Standard off-the-shelf; low cost</td>
+              <td><strong>Selected:</strong> Direct match for standard flanges and pipe fittings[cite: 4]</td>
             </tr>
             <tr>
               <td><strong>Extruded Acrylic Tube</strong></td>
-              <td>Excellent (near-glass clarity)</td>
-              <td>Moderate; brittle under vibration</td>
+              <td>Near-glass clarity</td>
+              <td>Moderate; more brittle under vibration</td>
               <td>Common commercial stock; moderate cost</td>
-              <td><strong>Backup Option:</strong> If optical PIV tracking requires higher clarity</td>
+              <td><strong>Alternative:</strong> Retained if higher optical fidelity is needed[cite: 4]</td>
             </tr>
             <tr>
               <td><strong>Fused Quartz</strong></td>
-              <td>Superior optical transmittance</td>
-              <td>Extreme temperature tolerance</td>
-              <td>Custom fabrication only; highly expensive</td>
-              <td><strong>Rejected:</strong> Excessive cost; no high-heat requirement in fan duct</td>
+              <td>Superior transmittance</td>
+              <td>Extreme heat tolerance</td>
+              <td>Custom fabrication; high expense</td>
+              <td><strong>Ruled Out:</strong> Excessive cost; no high-temperature requirement in this rig[cite: 4]</td>
             </tr>
           </tbody>
         </table>
       </div>
-
-      <ul>
-        <li><strong>Standardization:</strong> Basing circular dimensions on standard Schedule 40 pipe avoided bespoke machining costs for circular coupling sleeves.</li>
-        <li><strong>Modularity:</strong> Pre-drilled bolt flanges allow quick swapping between clean baseline screens, partial boundary layer blocks, and turbulent distortion grids.</li>
-      </ul>
     </div>
   </div>
 </body>
