@@ -398,7 +398,58 @@
       border: none;
     }
 
+    /* Footer Styling */
+    footer {
+      font-family: var(--font-mono);
+      text-align: center;
+      padding: 5rem 1rem 3rem 1rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      border-top: 1px solid var(--border);
+      margin-top: 4rem;
+    }
+
+    .footer-links {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 2rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .footer-links a {
+      color: var(--text);
+      text-decoration: none;
+      font-size: 0.82rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      transition: color 0.2s ease;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    footer p {
+      color: var(--muted);
+      font-size: 0.78rem;
+      letter-spacing: 0.04em;
+    }
+
     @media (max-width: 768px) {
+      nav {
+        padding: 0 1.25rem;
+      }
+      .nav-links {
+        gap: 1rem;
+      }
+      .nav-links a {
+        font-size: 0.75rem;
+      }
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
       .schedule-wrapper {
         grid-template-columns: 1fr;
         padding: 1.25rem;
@@ -564,6 +615,7 @@
     </div>
     <p>&copy; 2026 Aben Binu. All rights reserved.</p>
   </footer>
+
   <!-- Asynchronous Module Loader for about.html -->
   <script>
     fetch('about.html')
