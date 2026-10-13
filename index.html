@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Aben Binu | Aerospace Engineering</title>
+  
+  <!-- Premium Font Pairings (Space Grotesk = geometric aerospace display / Inter = editorial body / JetBrains Mono = instrumentation telemetry) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+
   <style>
     :root {
       --bg: #0b0f14;
@@ -14,6 +20,11 @@
       --accent: #58a6ff;
       --muted: #8b949e;
       --nav-bg: rgba(11, 15, 20, 0.85);
+      
+      /* Typographic Variables */
+      --font-display: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-mono: 'JetBrains Mono', SFMono-Regular, Menlo, monospace;
     }
 
     * {
@@ -29,8 +40,9 @@
     body {
       background-color: var(--bg);
       color: var(--text);
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      line-height: 1.6;
+      font-family: var(--font-body);
+      font-size: 0.95rem;
+      line-height: 1.65;
       -webkit-font-smoothing: antialiased;
     }
 
@@ -53,10 +65,11 @@
     }
 
     .nav-brand {
+      font-family: var(--font-display);
       color: var(--heading);
       text-decoration: none;
       font-size: 0.95rem;
-      letter-spacing: 0.2em;
+      letter-spacing: 0.22em;
       font-weight: 700;
       text-transform: uppercase;
     }
@@ -68,10 +81,11 @@
     }
 
     .nav-links a {
+      font-family: var(--font-mono);
       color: var(--muted);
       text-decoration: none;
-      font-size: 0.85rem;
-      letter-spacing: 0.15em;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
       text-transform: uppercase;
       transition: color 0.2s ease;
     }
@@ -118,26 +132,30 @@
     }
 
     h1 {
-      font-size: clamp(2rem, 5vw, 3.5rem);
-      letter-spacing: 0.25em;
+      font-family: var(--font-display);
+      font-size: clamp(2.2rem, 5.5vw, 3.8rem);
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--heading);
       font-weight: 700;
     }
 
     .subtitle {
-      font-size: clamp(0.85rem, 2vw, 1.1rem);
-      letter-spacing: 0.15em;
+      font-family: var(--font-mono);
+      font-size: clamp(0.8rem, 1.8vw, 0.95rem);
+      letter-spacing: 0.14em;
       color: var(--accent);
-      margin-top: 0.5rem;
+      margin-top: 0.6rem;
       text-transform: uppercase;
+      font-weight: 500;
     }
 
     .degree {
-      font-size: clamp(0.75rem, 1.5vw, 0.95rem);
-      letter-spacing: 0.1em;
+      font-family: var(--font-mono);
+      font-size: clamp(0.72rem, 1.4vw, 0.85rem);
+      letter-spacing: 0.08em;
       color: var(--muted);
-      margin-top: 0.25rem;
+      margin-top: 0.35rem;
     }
 
     /* Content Layout */
@@ -149,11 +167,13 @@
     }
 
     .section-title {
-      font-size: 1.4rem;
-      letter-spacing: 0.12em;
+      font-family: var(--font-display);
+      font-size: 1.3rem;
+      font-weight: 700;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--heading);
-      margin-bottom: 2rem;
+      margin-bottom: 2.2rem;
       display: flex;
       align-items: center;
       gap: 1.2rem;
@@ -183,8 +203,10 @@
     }
 
     .philosophy-title {
+      font-family: var(--font-display);
       color: var(--heading);
       font-size: 1.25rem;
+      font-weight: 700;
       margin-bottom: 1rem;
       letter-spacing: 0.05em;
     }
@@ -249,8 +271,11 @@
     }
 
     .card h3 {
+      font-family: var(--font-display);
       color: var(--heading);
       font-size: 1.05rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
       margin-bottom: 0.6rem;
       display: flex;
       justify-content: space-between;
@@ -281,12 +306,15 @@
     }
 
     .tag {
-      font-size: 0.75rem;
-      background: rgba(88, 166, 255, 0.1);
+      font-family: var(--font-mono);
+      font-size: 0.72rem;
+      font-weight: 500;
+      background: rgba(88, 166, 255, 0.08);
       color: var(--accent);
-      padding: 0.25rem 0.6rem;
+      padding: 0.2rem 0.55rem;
       border-radius: 4px;
       border: 1px solid rgba(88, 166, 255, 0.2);
+      letter-spacing: 0.04em;
     }
 
     /* Schedule / Connect Section */
@@ -311,8 +339,10 @@
     }
 
     .schedule-info h3 {
+      font-family: var(--font-display);
       color: var(--heading);
       font-size: 1.35rem;
+      font-weight: 700;
       margin-bottom: 0.85rem;
       letter-spacing: 0.05em;
     }
@@ -326,6 +356,7 @@
     }
 
     .schedule-btn {
+      font-family: var(--font-mono);
       display: inline-flex;
       align-items: center;
       gap: 0.6rem;
@@ -335,9 +366,9 @@
       padding: 0.85rem 1.6rem;
       border-radius: 6px;
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.8rem;
       font-weight: 600;
-      letter-spacing: 0.08em;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       transition: all 0.25s ease;
     }
@@ -379,10 +410,12 @@
 
     /* Footer */
     footer {
+      font-family: var(--font-mono);
       text-align: center;
       padding: 4rem 1rem;
       color: var(--muted);
-      font-size: 0.85rem;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
     }
 
     .links {
@@ -395,7 +428,7 @@
     .links a {
       color: var(--text);
       text-decoration: none;
-      font-size: 0.9rem;
+      font-size: 0.85rem;
       transition: color 0.2s ease;
     }
 
@@ -522,7 +555,7 @@
       </a>
 
       <!-- High school: Airline Management System -->
-      <a href="vast-thinking/airline-management/air_main.html" class="card">
+      <a href="projects/airline_management/airline_management.html" class="card">
         <div>
           <h3>Airline Operations Engine <span class="arrow">&nearr;</span></h3>
           <p>Modular Python CLI handling flight scheduling, automated booking pipelines, passenger persistence, and boarding passes.</p>
