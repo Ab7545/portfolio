@@ -317,15 +317,17 @@
       letter-spacing: 0.04em;
     }
 
-    /* Schedule / Connect Section */
+    /* Schedule / Connect Section - Compact */
     .schedule-wrapper {
       background: var(--card-bg);
       border: 1px solid var(--border);
       border-radius: 8px;
-      padding: 2.5rem;
+      padding: 1.5rem 1.75rem;
+      max-width: 780px;
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 2.5rem;
+      grid-template-columns: 1fr 340px;
+      gap: 1.75rem;
       align-items: center;
     }
 
@@ -333,44 +335,44 @@
       display: flex;
       flex-direction: column;
       justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 1rem;
+      align-items: flex-start;
+      text-align: left;
+      padding: 0;
     }
 
     .schedule-info h3 {
       font-family: var(--font-display);
       color: var(--heading);
-      font-size: 1.35rem;
+      font-size: 1.15rem;
       font-weight: 700;
-      margin-bottom: 0.85rem;
-      letter-spacing: 0.05em;
+      margin-bottom: 0.5rem;
+      letter-spacing: 0.03em;
     }
 
     .schedule-info p {
       color: var(--muted);
-      font-size: 0.95rem;
-      line-height: 1.7;
-      margin-bottom: 1.75rem;
-      max-width: 380px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin-bottom: 1.25rem;
+      max-width: 100%;
     }
 
     .schedule-btn {
       font-family: var(--font-mono);
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
-      background: rgba(88, 166, 255, 0.12);
+      gap: 0.4rem;
+      background: rgba(88, 166, 255, 0.08);
       color: var(--accent);
-      border: 1px solid rgba(88, 166, 255, 0.35);
-      padding: 0.85rem 1.6rem;
-      border-radius: 6px;
+      border: 1px solid rgba(88, 166, 255, 0.3);
+      padding: 0.55rem 1.1rem;
+      border-radius: 5px;
       text-decoration: none;
-      font-size: 0.8rem;
+      font-size: 0.75rem;
       font-weight: 600;
-      letter-spacing: 0.1em;
+      letter-spacing: 0.08em;
       text-transform: uppercase;
-      transition: all 0.25s ease;
+      transition: all 0.2s ease;
     }
 
     .schedule-btn:hover {
@@ -378,12 +380,12 @@
       color: var(--bg);
       border-color: var(--accent);
       transform: translateY(-2px);
-      box-shadow: 0 4px 16px rgba(88, 166, 255, 0.25);
+      box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
     }
 
     .calendar-container {
       width: 100%;
-      height: 600px;
+      height: 380px;
       border-radius: 6px;
       overflow: hidden;
       border: 1px solid var(--border);
@@ -396,65 +398,17 @@
       border: none;
     }
 
-    /* Subtle Native Scroll Reveal */
-    .reveal {
-      opacity: 0;
-      transform: translateY(20px);
-      transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-    }
-
-    .reveal.active {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* Footer */
-    footer {
-      font-family: var(--font-mono);
-      text-align: center;
-      padding: 4rem 1rem;
-      color: var(--muted);
-      font-size: 0.8rem;
-      letter-spacing: 0.04em;
-    }
-
-    .links {
-      display: flex;
-      justify-content: center;
-      gap: 2rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .links a {
-      color: var(--text);
-      text-decoration: none;
-      font-size: 0.85rem;
-      transition: color 0.2s ease;
-    }
-
-    .links a:hover {
-      color: var(--accent);
-    }
-
     @media (max-width: 768px) {
-      nav {
-        padding: 0 1.25rem;
-      }
-      .nav-links {
-        gap: 1rem;
-      }
-      .nav-links a {
-        font-size: 0.75rem;
-      }
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
       .schedule-wrapper {
         grid-template-columns: 1fr;
-        padding: 1.5rem;
+        padding: 1.25rem;
+      }
+      .schedule-info {
+        align-items: center;
+        text-align: center;
       }
       .calendar-container {
-        height: 520px;
+        height: 380px;
       }
     }
   </style>
